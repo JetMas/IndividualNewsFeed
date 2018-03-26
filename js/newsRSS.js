@@ -9,7 +9,6 @@ var handleData = function(data) {
     const mediaContent = item.getElementsByTagName('media:content')[0];
     //Some stories have images and some don't
     if (mediaContent){
-      console.log(mediaContent.getAttribute('url'));
       imageNode.src = mediaContent.getAttribute('url');
     }
 
@@ -72,7 +71,7 @@ function createsCORSRequest(method, url){
 
 var handleSelectionChange = function() {
   // store the radio buttons as an array
-  const buttons = Array.from(document.querySelectorAll('input'));
+  const buttons = Array.from(document.querySelectorAll('input[name="newsOptions"]'));
 
   // find the button that is checked and get its value
   const newsType = buttons.find(function(button) {
@@ -102,14 +101,48 @@ var handleSelectionChange = function() {
   xhr.send();
 };
 
+var selectionChangeOnClick = function(value) {
+  //Uses New Yorks Times' RSS feed
+  const url = `http://rss.nytimes.com/services/xml/rss/nyt/${value}.xml`;
+
+  const xhr = createsCORSRequest('GET', url);
+  if(!xhr){
+    const container = document.querySelector('content');
+    container.innerHTML = '';
+    container.textValue = 'An error occured reading the stream';
+  }
+
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      handleData(xhr.responseXML);
+    } else {
+      const container = document.querySelector('content');
+      container.innerHTML = '';
+      container.textValue = 'An error occured reading the stream';
+    }
+  };
+
+  xhr.send();
+};
+
 var init = function() {
-
   // connect the change of event of the form to the method
-  document.querySelector('form').addEventListener('change',
-      handleSelectionChange);
+  /*document.getElementById('newsSelector').addEventListener('change',
+      handleSelectionChange);*/
 
-  handleSelectionChange(); // call the method to simulate the first
+  document.getElementsByName("newsButton").forEach(function (element, index){
+    element.addEventListener("click", function(){
+      //console.log(element.querySelector('input').value);
+      //The input element is wrapped inside a label element
+      selectionChangeOnClick(element.querySelector('input').value);
+    });
+  });
+  //handleSelectionChange(); // call the method to simulate the first
                            // selection
+
+  //Click the first button for the first selection.
+  //The first button should be set active.
+  document.querySelector("label[name='newsButton']").click();
 };
 
 // call init when the page has loaded
