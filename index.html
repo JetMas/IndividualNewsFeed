@@ -4,6 +4,8 @@
   <meta charset="utf-8"/>
   <title>News Feed</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+
   <!-- Load in the RSS reader -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -12,24 +14,55 @@
 </head>
 
 <body>
-<div id="newsSelector" class="btn-group btn-group-toggle" data-toggle="buttons">
-  <label class="btn btn-outline-primary active" name="newsButton">
-    <input type="radio" name="newsOptions" value="US" autocomplete="off" checked/>US
-  </label>
+<div class="container">
+  <div class="row">
+    <div id="newsSelector" class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-outline-primary active" name="newsButton">
+        <input type="radio" name="newsOptions" value="US" autocomplete="off" checked/>US
+      </label>
 
-  <label class="btn btn-outline-primary" name='newsButton'>
-    <input type='radio' name='newsOptions' value='World' autocomplete="off"/>World
-  </label>
+      <label class="btn btn-outline-primary" name='newsButton'>
+        <input type='radio' name='newsOptions' value='World' autocomplete="off"/>World
+      </label>
 
-  <label class="btn btn-outline-primary" name='newsButton'>
-    <input type='radio' name='newsOptions' value='Technology' autocomplete="off"/>Tech
-  </label>
+      <label class="btn btn-outline-primary" name='newsButton'>
+        <input type='radio' name='newsOptions' value='Technology' autocomplete="off"/>Tech
+      </label>
 
-  <label class="btn btn-outline-primary" name='newsButton'>
-    <input type='radio' name='newsOptions' value='Sports' autocomplete="off"/>Sports
-  </label>
+      <label class="btn btn-outline-primary" name='newsButton'>
+        <input type='radio' name='newsOptions' value='Sports' autocomplete="off"/>Sports
+      </label>
+    </div>
+  </div>
+  <div id="content">
+    <!--
+    <div id="article" class="row justify-content-md-center">
+      <div id="imageWrapper" class="col-md-2 mx-auto">
+      </div>
+      <div id="info" class="col-md-10">
+        <div id="title" class="col-md-10">
+        </div>
+        <div id="pubDate" class="col-md-10">
+        </div>
+        <div id="description" class="col-md-10">
+        </div>
+      </div>
+    </div>
+  -->
+    <div id="article">
+      <div class="card flex-md-row mb-4 box-shadow">
+        <img id="image" class="card-img-left flex-auto d-none d-md-block" style="width: 200px; height: 200px;" data-holder-rendered="true">
+        <div class="card-body d-flex flex-column align-items-start">
+            <h3 class="mb-0">
+              <a id="title" class="text-dark" href="#">Title</a>
+            </h3>
+            <div id="pubDate" class="mb-1 text-muted">Published Date</div>
+            <p id="description" class="card-text mb-auto">Description</p>
+            <a id="link" href="#">Continue reading</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-<div id='content'></div>
 </body>
 </html>
