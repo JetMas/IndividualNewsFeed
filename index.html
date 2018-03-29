@@ -14,26 +14,26 @@
 </head>
 
 <body>
-<div class="container">
-  <div class="row">
-    <div id="newsSelector" class="btn-group btn-group-toggle" data-toggle="buttons">
-      <label class="btn btn-outline-primary active" name="newsButton">
-        <input type="radio" name="newsOptions" value="US" autocomplete="off" checked/>US
-      </label>
+<nav class="navbar navbar-expand-md bg-secondary fixed-top justify-content-center ">
+  <div id="newsSelector" class="btn-group-toggle" data-toggle="buttons">
+    <label class="btn btn-outline-light active" name="newsButton">
+      <input type="radio" name="newsOptions" value="US" autocomplete="off" checked/>US
+    </label>
 
-      <label class="btn btn-outline-primary" name='newsButton'>
-        <input type='radio' name='newsOptions' value='World' autocomplete="off"/>World
-      </label>
+    <label class="btn btn-outline-light" name='newsButton'>
+      <input type='radio' name='newsOptions' value='World' autocomplete="off"/>World
+    </label>
 
-      <label class="btn btn-outline-primary" name='newsButton'>
-        <input type='radio' name='newsOptions' value='Technology' autocomplete="off"/>Tech
-      </label>
+    <label class="btn btn-outline-light" name='newsButton'>
+      <input type='radio' name='newsOptions' value='Technology' autocomplete="off"/>Tech
+    </label>
 
-      <label class="btn btn-outline-primary" name='newsButton'>
-        <input type='radio' name='newsOptions' value='Sports' autocomplete="off"/>Sports
-      </label>
-    </div>
+    <label class="btn btn-outline-light" name='newsButton'>
+      <input type='radio' name='newsOptions' value='Sports' autocomplete="off"/>Sports
+    </label>
   </div>
+</nav>
+<main class="container">
   <div id="content">
     <!--
     <div id="article" class="row justify-content-md-center">
@@ -48,21 +48,23 @@
         </div>
       </div>
     </div>
-  -->
+    -->
     <div id="article">
       <div class="card flex-md-row mb-4 box-shadow">
-        <div class="card-body d-flex flex-column align-items-start">
-            <h3 class="mb-0">
+        <div id="articleInfo" class="card-body d-flex flex-column align-items-start">
+            <h4 class="mb-0">
               <a id="title" class="text-dark" href="#">Title</a>
-            </h3>
+            </h4>
             <div id="pubDate" class="mb-1 text-muted">Published Date</div>
             <p id="description" class="card-text mb-auto">Description</p>
             <a id="link" href="#">Continue reading</a>
         </div>
-        <img id="image" class="card-img-right flex-auto d-none d-md-block">
+        <div id="imageWrapper" class="mx-auto">
+          <img id="image" class="card-img-right flex-auto d-none d-md-block">
+        </div>
       </div>
     </div>
   </div>
-</div>
+</main>
 </body>
 </html>

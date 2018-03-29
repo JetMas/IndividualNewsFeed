@@ -1,3 +1,18 @@
+body {
+  padding-top: 3.5rem;
+}
+
+.container {
+  padding-top: 20px;
+}
+
+nav .btn {
+  width: 75px;
+}
+
+#articleInfo{
+}
+
 #image {
   width: 200px;
   height: 200px;
