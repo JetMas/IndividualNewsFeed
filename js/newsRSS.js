@@ -164,6 +164,7 @@ var init = function() {
       //console.log(element.querySelector('input').value);
       //The input element is wrapped inside a label element
       selectionChangeOnClick(element.querySelector('input').value);
+      $(window).scrollTop(0);
     });
   });
   //handleSelectionChange(); // call the method to simulate the first
