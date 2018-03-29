@@ -26,19 +26,19 @@ var handleData = function(data) {
     // make a node for the title
     const titleNode = articleNode.querySelector('a[id="title"]');
     titleNode.href = item.querySelector('link').textContent;
-    titleNode.innerHTML = item.querySelector('title').textContent + '&nbsp;';
+    titleNode.innerHTML = item.querySelector('title').textContent;
     //articleNode.querySelector('div[id="title"]').innerHTML = '';
     //articleNode.querySelector('div[id="title"]').appendChild(titleNode);
 
     // make a node for the date
     const dateNode = articleNode.querySelector('div[id="pubDate"]');
-    dateNode.innerHTML = item.querySelector('pubDate').textContent + '&nbsp;';
+    dateNode.innerHTML = item.querySelector('pubDate').textContent;
     //articleNode.querySelector('div[id="pubDate"]').innerHTML = item.querySelector('pubDate').textContent;
     //articleNode.querySelector('div[id="pubDate"]').appendChild(dateNode);
 
     // make a node for the description
     const descriptionNode = articleNode.querySelector('p[id="description"]');
-    descriptionNode.innerHTML = item.querySelector('description').textContent + '&nbsp;';
+    descriptionNode.innerHTML = item.getElementsByTagName('description')[0].textContent;
     //articleNode.querySelector('div[id="description"]').innerHTML = item.querySelector('description').textContent;
     //articleNode.querySelector('div[id="description"]').appendChild(descriptionNode);
 
