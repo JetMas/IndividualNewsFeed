@@ -3,7 +3,7 @@ const userFile = 'json/users.json';
 function login(username, password) {
   $.getJSON(userFile, function(data){
     $.each(data, function(key, val) {
-      console.log(`${key} : ${value}`);
+      console.log(`${key} : ${val}`);
     });
   });
 }
