@@ -173,6 +173,14 @@ var init = function() {
   //Click the first button for the first selection.
   //The first button should be set active.
   document.querySelector("label[name='newsButton']").click();
+
+  var rssRefreshInterval = setInterval(function() {
+    var btn = document.getElementById('newsSelector').getElementsByClassName('active')[0];
+    selectionChangeOnClick(btn.querySelector('input').value);
+    //console.log(btn.querySelector('input').value);
+  }, 180000);//Refresh the RSS feed every 3 minutes.
+
+
 };
 
 // call init when the page has loaded

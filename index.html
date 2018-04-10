@@ -15,27 +15,27 @@
 </head>
 
 <body>
+
 <nav class="navbar navbar-expand-md bg-secondary fixed-top ">
   <div id="newsSelector" class="btn-group-toggle justify-content-center" data-toggle="buttons">
     <label class="btn btn-outline-light active" name="newsButton">
-      <input type="radio" name="newsOptions" value="US" autocomplete="off" checked/>US
+      <input type="radio" name="newsOptions" value='US'/>US
     </label>
 
     <label class="btn btn-outline-light" name='newsButton'>
-      <input type='radio' name='newsOptions' value='World' autocomplete="off"/>World
+      <input type='radio' name='newsOptions' value='World'/>World
     </label>
 
     <label class="btn btn-outline-light" name='newsButton'>
-      <input type='radio' name='newsOptions' value='Technology' autocomplete="off"/>Tech
+      <input type='radio' name='newsOptions' value='Technology'/>Tech
     </label>
 
     <label class="btn btn-outline-light" name='newsButton'>
-      <input type='radio' name='newsOptions' value='Sports' autocomplete="off"/>Sports
+      <input type='radio' name='newsOptions' value='Sports'/>Sports
     </label>
   </div>
   <button class="btn btn-outline-info" data-toggle="modal" data-target="#loginModal">Login</button>
 </nav>
-
 
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -65,22 +65,9 @@
     </div>
   </div>
 </div>
+
 <main class="container">
   <div id="content">
-    <!--
-    <div id="article" class="row justify-content-md-center">
-      <div id="imageWrapper" class="col-md-2 mx-auto">
-      </div>
-      <div id="info" class="col-md-10">
-        <div id="title" class="col-md-10">
-        </div>
-        <div id="pubDate" class="col-md-10">
-        </div>
-        <div id="description" class="col-md-10">
-        </div>
-      </div>
-    </div>
-    -->
     <div id="article">
       <div class="card flex-md-row mb-4 box-shadow">
         <div id="articleInfo" class="card-body d-flex flex-column align-items-start">
@@ -98,5 +85,6 @@
     </div>
   </div>
 </main>
+
 </body>
 </html>

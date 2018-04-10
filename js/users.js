@@ -13,7 +13,7 @@ function login(username, password) {
       //then check if the password match
       if( (val.username.toUpperCase() === username.toUpperCase()) && (val.password == password) ){
         //setUserCookie(username);
-        console.log("login success!")
+        console.log("login success!");
       }
     });
   });
@@ -26,6 +26,10 @@ $(document).ready(function () {
     //console.log('click1');
     var username = document.getElementById("username");
     var password = document.getElementById("password");
+    console.log(username);
+    console.log(password);
     login(username, password);
+
+    
   });
 });
