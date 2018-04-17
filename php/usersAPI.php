@@ -5,18 +5,20 @@ session_start();
 
 $users_file_path = "users.json";
 $users_str = file_get_contents($users_file_path);
-var_dump($users_str);
 $users = json_decode($users_str, true);
+var_dump($users);
 
 function get_users() {
     return $users;
 }
 
 function get_user_by_username($username){
-    foreach($users as $key => $value){
-        var_dump($user);
+	var_dump($username);
+	var_dump(strval(count($users)));
+    foreach ($users as $key => $value){
+	var_dump("here");
         if(strcasecmp($value['username'],$username) == 0){
-            return $user;
+            return $value;
         }
     }
     return null;
@@ -81,7 +83,7 @@ if(isset($_POST["action"]) && in_array($_POST["action"], $accepted_URL)){
             break;
         case "login":
             if(isset($_POST["username"]) && isset($_POST["password"])){
-                if(get_user_by_username("doe")!==null){
+                if(get_user_by_username($_POST["username"])!==null){
                     if(user_login($_POST["username"], $_POST["password"])){
                         $value = "Login successful.";
                     }
@@ -89,9 +91,9 @@ if(isset($_POST["action"]) && in_array($_POST["action"], $accepted_URL)){
                         $value = "Wrong username or password.";                        
                     }
                 }
-		        else{
+		else{
 		            //$value = "Here";
-                    $value = strcasecmp($users[0]['username'], $_POST["username"]);
+                    $value = "User does not exist.";
                 }
             }
             else {
