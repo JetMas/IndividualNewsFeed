@@ -30,8 +30,8 @@ function get_user_by_username($username){
         }
        ]';
     $sample_array = json_decode($sample_data, true);
-    foreach ($sample_array as $key1 => $value1) {
-        print_r($sample_array[$key1]);
+    foreach ($users_array as $key1 => $value1) {
+        print_r($users_array[$key1]);
     }
     /*
     foreach ($users_array as $key => $value){
