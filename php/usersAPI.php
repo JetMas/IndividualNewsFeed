@@ -13,32 +13,14 @@ function get_users() {
 }
 
 function get_user_by_username($username){   
-    print_r(count($users_array));
-    print_r("\n"); 
-    $sample_data = '[
-        {"name":"Adam","Age":18,
-            "Address":{"Street":"1000 Brooklyn Meadow","City":"Denver"}
-        },
-        {"name":"Bob","Age":30,
-            "Address":{"Street":"23 Sharp Crescent","City":"Bristol"}
-        },
-        {"name":"Kaneko","Age":27,
-            "Address":{"Street":"7 Yuki Street","City":"Tokyo"}
-        }
-       ]';
-    print_r($GLOBALS['users_str']);
+    print_r($GLOBALS['users_array']);
     print_r("\n");
-    $sample_array = json_decode($sample_data, true); 
-    foreach ($users_array as $key1 => $value1) {
-        print_r($users_array[$key1]);
-    }
-    /*
-    foreach ($users_array as $key => $value){
-        print_r($users_array[$key]);
-        if(strcasecmp($users_array[$key]['username'],$username) == 0){
-            return $users_array[$key];
+    foreach ($users_array as $user){
+        print_r($user);
+        if(strcasecmp($user['username'],$username) == 0){
+            return $user;
         }
-    }*/
+    }
     return null;
 }
 
