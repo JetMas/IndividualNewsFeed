@@ -5,7 +5,8 @@ session_start();
 
 $users_file_path = "users.json";
 $users_str = file_get_contents($users_file_path);
-$users = json_decode($users_str, false);
+var_export($users_str);
+$users = json_decode($users_str, true);
 var_export($users);
 
 function get_users() {
@@ -14,7 +15,6 @@ function get_users() {
 
 function get_user_by_username($username){
 	var_export($username);
-	var_export(strval(count($users)));
     foreach ($users as $key => $value){
 	    var_dump("here");
         if(strcasecmp($value['username'],$username) == 0){
