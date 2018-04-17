@@ -1,6 +1,7 @@
 <?php
 //Author: Jethro Masangya
 //Description: Provides Api for accessing the users json file.
+session_start();
 
 $users = json_decode(file_get_contents('json/users.json'), true);
 
@@ -24,11 +25,20 @@ function new_user($username, $password){
     );
     array_push($users, $new_user);
     file_put_contents('json/users.json', json_encode($users));
-    return true;
 }
 
+function user_login($username, $password){
+    $user = get_user_by_username($username);
+    if($user['password'] == $password){
+        $_SESSION['user'] = $username;
+        return true;
+    }
+    else{
+        return false;
+    }
+}
 
-$accepted_URL = array("get_users", "get_user_by_username", "new_user");
+$accepted_URL = array("get_users", "get_user_by_username", "new_user", "login");
 $value = "An error has occured";
 
 if(isset($_GET["action"]) && in_array($_GET["action"], $accepted_URL)){
@@ -52,9 +62,22 @@ elseif(isset($_POST["action"]) && in_array($_POST["action"], $accepted_URL)){
             if(isset($_POST["username"]) && isset($_POST["password"])){
                 if(!get_user_by_username($_POST["username"])){
                     new_user($_POST["username"], $_POST["password"]);
+                    $value = "User successfully created.";
                 }
                 else{
                     $value = "Username already taken.";
+                }
+            }
+            else {
+                $value = "Missing argument";
+            }
+            break;
+        case "login":
+            if(isset($_POST["username"]) && isset($_POST["password"])){
+                if(!get_user_by_username($_POST["username"]) && user_login($_POST["username"], $_POST["password"])){
+                    $value = "Login successful.";                }
+                else{
+                    $value = "Wrong username or password.";
                 }
             }
             else {
