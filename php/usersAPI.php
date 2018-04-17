@@ -12,7 +12,7 @@ function get_users() {
 }
 
 function get_user_by_username($username){
-    for($i = 0; $i<count($users); $i++){
+    for($i = 0; $i < count($users); $i++){
         if(strcasecmp($users[$i]['username'], $username) == 0){
             return $users[$i];
         }
@@ -95,7 +95,7 @@ if(isset($_POST["action"]) && in_array($_POST["action"], $accepted_URL)){
                 }
 		else{
 		    //$value = "Here";
-                    $value = get_user_by_username('doe');
+                    $value = strcasecmp($users[0]['username'], $_POST["username"]);
                 }
             }
             else {
