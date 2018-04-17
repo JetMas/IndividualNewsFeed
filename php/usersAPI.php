@@ -6,7 +6,8 @@ session_start();
 $users_file_path = "users.json";
 $users_str = file_get_contents($users_file_path);
 $users_array = json_decode($users_str, true);
-print_r($users_array . "\n");
+print_r($users_array);
+print_r("\n");
 
 function get_users() {
     return $users;
