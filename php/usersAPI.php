@@ -14,6 +14,7 @@ function get_users() {
 
 function get_user_by_username($username){
     foreach($users as $key => $value){
+        var_dump($user);
         if(strcasecmp($value['username'],$username) == 0){
             return $user;
         }
@@ -88,8 +89,8 @@ if(isset($_POST["action"]) && in_array($_POST["action"], $accepted_URL)){
                         $value = "Wrong username or password.";                        
                     }
                 }
-		else{
-		    //$value = "Here";
+		        else{
+		            //$value = "Here";
                     $value = strcasecmp($users[0]['username'], $_POST["username"]);
                 }
             }
