@@ -11,7 +11,7 @@ function get_users() {
 
 function get_user_by_username($username){
     foreach($users as $user){
-        if($user['username'] == $username){
+        if(strcmp($user['username'],$username)){
             return $user;
         }
     }
@@ -29,7 +29,7 @@ function new_user($username, $password){
 
 function user_login($username, $password){
     $user = get_user_by_username($username);
-    if($user['password'] == $password){
+    if(strcmp($user['password'],$password)){
         $_SESSION['user'] = $username;
         return true;
     }
