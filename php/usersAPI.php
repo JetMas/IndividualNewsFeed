@@ -12,11 +12,17 @@ function get_users() {
 }
 
 function get_user_by_username($username){
+    for($i = 0; $i<count($users); $i++){
+        if(strcasecmp($users[$i]['username'], $username) == 0){
+            return $users[$i];
+        }
+    }
+    /*
     foreach($users as $key => $value){
         if(strcasecmp($value['username'],$username) == 0){
             return $user;
         }
-    }
+    }*/
     return null;
 }
 
