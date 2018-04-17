@@ -5,7 +5,7 @@ function setUserCookie(username){
 }
 
 function login(username, password) {
-  var data = 'color='+c+'&food='+f;
+  var data = `action=login&usernam=${username}&password=${password}`;
   $.ajax({
     type:'POST',
     data: data,
@@ -20,8 +20,8 @@ function login(username, password) {
 $(document).ready(function () {
   $('#login').click(function () {
     //console.log('click1');
-    var username = document.getElementById("username");
-    var password = document.getElementById("password");
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
     console.log(username);
     console.log(password);
     login(username, password);
