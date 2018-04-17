@@ -63,7 +63,7 @@ if(isset($_POST["action"]) && in_array($_POST["action"], $accepted_URL)){
     switch($_POST["action"]){
         case "new_user":
             if(isset($_POST["username"]) && isset($_POST["password"])){
-                if(!get_user_by_username($_POST["username"])){
+                if(get_user_by_username($_POST["username"]) != null){
                     new_user($_POST["username"], $_POST["password"]);
                     $value = "User successfully created.";
                 }
@@ -77,8 +77,9 @@ if(isset($_POST["action"]) && in_array($_POST["action"], $accepted_URL)){
             break;
         case "login":
             if(isset($_POST["username"]) && isset($_POST["password"])){
-                if(!get_user_by_username($_POST["username"]) && user_login($_POST["username"], $_POST["password"])){
-                    $value = "Login successful.";                }
+                if(get_user_by_username($_POST["username"]) != null && user_login($_POST["username"], $_POST["password"])){
+                    $value = "Login successful.";                
+                }
                 else{
                     $value = "Wrong username or password.";
                 }
