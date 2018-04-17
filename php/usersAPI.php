@@ -68,7 +68,7 @@ if(isset($_POST["action"]) && in_array($_POST["action"], $accepted_URL)){
                     $value = "User successfully created.";
                 }
                 else{
-                    $value = "Username already taken.";
+                    $value = $_POST["username"] + "Username already taken.";
                 }
             }
             else {
