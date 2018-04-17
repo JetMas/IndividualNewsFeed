@@ -12,11 +12,12 @@ function get_users() {
 }
 
 function get_user_by_username($username){
-    foreach($users as $user){
-        if(strcasecmp($user['username'],$username) == 0){
+    foreach($users as $key => $value){
+        if(strcasecmp($value['username'],$username) == 0){
             return $user;
         }
     }
+    return null;
 }
 
 function new_user($username, $password){
