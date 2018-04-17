@@ -6,16 +6,16 @@ session_start();
 $users_file_path = "users.json";
 $users_str = file_get_contents($users_file_path);
 $users_array = json_decode($users_str, true);
-print_r($users_array);
-print_r("\n");
+//print_r($users_array);
+//print_r("\n");
 
 function get_users() {
     return $users;
 }
 
 function get_user_by_username($username){
-    print_r($username);
-    print_r("\n");    
+    //print_r($username);
+    //print_r("\n");    
     print_r(count($users_array));
     print_r("\n"); 
     $sample_data = '[
@@ -29,7 +29,12 @@ function get_user_by_username($username){
             "Address":{"Street":"7 Yuki Street","City":"Tokyo"}
         }
        ]';
+    print_r($sample_data);
+    print_r("\n");
+    print_r($users_str);
+    print_r("\n");        
     $sample_array = json_decode($sample_data, true);
+    print_r(count($sample_array));     
     foreach ($users_array as $key1 => $value1) {
         print_r($users_array[$key1]);
     }
