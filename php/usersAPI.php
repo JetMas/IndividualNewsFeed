@@ -56,7 +56,8 @@ if(isset($_GET["action"]) && in_array($_GET["action"], $accepted_URL)){
             break;
     }
 }
-elseif(isset($_POST["action"]) && in_array($_POST["action"], $accepted_URL)){
+
+if(isset($_POST["action"]) && in_array($_POST["action"], $accepted_URL)){
     switch($_GET["action"]){
         case "new_user":
             if(isset($_POST["username"]) && isset($_POST["password"])){
