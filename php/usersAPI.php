@@ -5,6 +5,7 @@ session_start();
 
 $users_file_path = "users.json";
 $users_str = file_get_contents($users_file_path);
+var_dump($users_str);
 $users = json_decode($users_str, true);
 
 function get_users() {
@@ -12,17 +13,11 @@ function get_users() {
 }
 
 function get_user_by_username($username){
-    for($i = 0; $i < count($users); $i++){
-        if(strcasecmp($users[$i]['username'], $username) == 0){
-            return $users[$i];
-        }
-    }
-    /*
     foreach($users as $key => $value){
         if(strcasecmp($value['username'],$username) == 0){
             return $user;
         }
-    }*/
+    }
     return null;
 }
 
@@ -85,7 +80,7 @@ if(isset($_POST["action"]) && in_array($_POST["action"], $accepted_URL)){
             break;
         case "login":
             if(isset($_POST["username"]) && isset($_POST["password"])){
-	        if(get_user_by_username("doe")!==null){
+                if(get_user_by_username("doe")!==null){
                     if(user_login($_POST["username"], $_POST["password"])){
                         $value = "Login successful.";
                     }
