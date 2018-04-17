@@ -3,7 +3,9 @@
 //Description: Provides Api for accessing the users json file.
 session_start();
 
-$users = json_decode(file_get_contents('json/users.json'), true);
+$users_file = 'json/users.json';
+
+$users = json_decode(file_get_contents($users_file), true);
 
 function get_users() {
     return $users;
@@ -11,7 +13,7 @@ function get_users() {
 
 function get_user_by_username($username){
     foreach($users as $user){
-        if(strcasecmp($user['username'],$username) == 0){
+        if(strcasecmp($user->username,$username) == 0){
             return $user;
         }
     }
@@ -24,12 +26,12 @@ function new_user($username, $password){
         'password' => $password
     );
     array_push($users, $new_user);
-    file_put_contents('json/users.json', json_encode($users));
+    file_put_contents($users_file, json_encode($users));
 }
 
 function user_login($username, $password){
     $user = get_user_by_username($username);
-    if(strcmp($user['password'],$password) == 0){
+    if(strcmp($user->password,$password) == 0){
         $_SESSION['user'] = $username;
         return true;
     }
@@ -68,7 +70,7 @@ if(isset($_POST["action"]) && in_array($_POST["action"], $accepted_URL)){
                     $value = "User successfully created.";
                 }
                 else{
-                    $value ="Username already taken.";
+                    $value = "Username already taken.";
                 }
             }
             else {
@@ -86,7 +88,7 @@ if(isset($_POST["action"]) && in_array($_POST["action"], $accepted_URL)){
                     }
                 }
                 else{
-                    $value =  $_POST["username"];
+                    $value = "User does not exist.";
                 }
             }
             else {
