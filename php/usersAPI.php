@@ -54,6 +54,8 @@ if(isset($_GET["action"]) && in_array($_GET["action"], $accepted_URL)){
                 $value = "Missing argument";
             }        
             break;
+        default:
+            $value = "Unkown action.";            
     }
 }
 
@@ -85,6 +87,8 @@ if(isset($_POST["action"]) && in_array($_POST["action"], $accepted_URL)){
                 $value = "Missing argument";
             }
             break;
+        default:
+            $value = "Unkown action.";
     }
 }
 
