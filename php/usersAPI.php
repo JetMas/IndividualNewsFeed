@@ -6,17 +6,17 @@ session_start();
 $users_file_path = "users.json";
 $users_str = file_get_contents($users_file_path);
 $users = json_decode($users_str, true);
-var_dump($users);
+var_export($users);
 
 function get_users() {
     return $users;
 }
 
 function get_user_by_username($username){
-	var_dump($username);
-	var_dump(strval(count($users)));
+	var_export($username);
+	var_export(strval(count($users)));
     foreach ($users as $key => $value){
-	var_dump("here");
+	    var_dump("here");
         if(strcasecmp($value['username'],$username) == 0){
             return $value;
         }
