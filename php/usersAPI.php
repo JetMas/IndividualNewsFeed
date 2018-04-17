@@ -88,5 +88,4 @@ elseif(isset($_POST["action"]) && in_array($_POST["action"], $accepted_URL)){
 }
 
 exit(json_encode($value));
-
 ?>

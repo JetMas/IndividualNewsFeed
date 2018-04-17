@@ -6,12 +6,13 @@ function setUserCookie(username){
 
 function login(username, password) {
   var data = `action=login&usernam=${username}&password=${password}`;
+  console.log("login")
   $.ajax({
     type:'POST',
     data: data,
     url: 'php/userAPI.php',
     success: function(response){
-      console.log(response);
+      console.log("success");
     }
   });
 }
