@@ -32,7 +32,6 @@ function new_user($username, $password){
 
 function user_login($username, $password){
     $user = get_user_by_username($username);
-    print_r($user);
     if(strcmp($user["password"],$password) == 0){
         $_SESSION['user'] = $user['username'];
         return true;
@@ -99,6 +98,7 @@ if(isset($_POST["action"]) && in_array($_POST["action"], $accepted_URL)){
             $value = "Unkown action.";
         case "logout":
             user_logout();
+            $value = "Logout successful";            
             break;
     }
 }
