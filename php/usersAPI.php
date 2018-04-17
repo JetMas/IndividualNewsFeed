@@ -14,7 +14,7 @@ function get_users() {
 
 function get_user_by_username($username){
     print_r($username . "\n");
-    print_r(count($users_array) . "\n");
+    print_r(count($users_array[0]) . "\n");
     foreach ($users_array as $user){
 	    print_r($user);
         if(strcasecmp($user['username'],$username) == 0){
