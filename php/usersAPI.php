@@ -3,9 +3,9 @@
 //Description: Provides Api for accessing the users json file.
 session_start();
 
-$users_file = 'json/users.json';
-
-$users = json_decode(file_get_contents($users_file), true);
+$users_file_path = "../json/users.json";
+$users_str = file_get_contents($user_file_path);
+$users = json_decode($users_str, true);
 
 function get_users() {
     return $users;
@@ -89,7 +89,7 @@ if(isset($_POST["action"]) && in_array($_POST["action"], $accepted_URL)){
                     }
                 }
                 else{
-                    $value = $users[0]["username"];
+                    $value = file_get_contents($user_file_path);
                 }
             }
             else {
