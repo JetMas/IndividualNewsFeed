@@ -21,34 +21,39 @@ session_start();
 <body>
 
 <nav class="navbar navbar-expand-md bg-secondary fixed-top ">
-  <div id="newsSelector" class="btn-group-toggle justify-content-center" data-toggle="buttons">
-    <label class="btn btn-outline-light active" name="newsButton">
-      <input type="radio" name="newsOptions" value='US'/>US
-    </label>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div id="newsSelector" class="navbar-nav mr-auto btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-outline-light active" name="newsButton">
+        <input type="radio" name="newsOptions" value='US'/>US
+      </label>
 
-    <label class="btn btn-outline-light" name='newsButton'>
-      <input type='radio' name='newsOptions' value='World'/>World
-    </label>
+      <label class="btn btn-outline-light" name='newsButton'>
+        <input type='radio' name='newsOptions' value='World'/>World
+      </label>
 
-    <label class="btn btn-outline-light" name='newsButton'>
-      <input type='radio' name='newsOptions' value='Technology'/>Tech
-    </label>
+      <label class="btn btn-outline-light" name='newsButton'>
+        <input type='radio' name='newsOptions' value='Technology'/>Tech
+      </label>
 
-    <label class="btn btn-outline-light" name='newsButton'>
-      <input type='radio' name='newsOptions' value='Sports'/>Sports
-    </label>
+      <label class="btn btn-outline-light" name='newsButton'>
+        <input type='radio' name='newsOptions' value='Sports'/>Sports
+      </label>
+    </div>
+
+    <div class="inline my-2 my-lg-0">
+      <?php 
+        if($_SESSION['user'] != ''){
+          echo '<label class="text-white" id="username">';
+          echo $_SESSION["user"];
+          echo '</label>';
+          echo '<button class="btn btn-outline-success" id="logout">Logout</button>';
+        }
+        else {
+          echo '<button class="btn btn-outline-success" data-toggle="modal" data-target="#loginModal">Login</button>';      
+        }
+      ?>
+    </div>
   </div>
-  <?php 
-    if($_SESSION['user'] != ''){
-      echo '<label class="text-white">';
-      echo $_SESSION["user"];
-      echo '</label>';
-      echo '<button class="btn btn-outline-success" id="logout">Logout</button>';
-    }
-    else {
-      echo '<button class="btn btn-outline-success" data-toggle="modal" data-target="#loginModal">Login</button>';      
-    }
-  ?>
 </nav>
 
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
