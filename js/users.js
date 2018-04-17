@@ -2,6 +2,7 @@ const userFile = 'json/users.json';
 
 function login(username, password) {
   var data = `action=login&username=${username}&password=${password}`;
+  console.log(data);
   $.ajax({
     type:'POST',
     data: data,
