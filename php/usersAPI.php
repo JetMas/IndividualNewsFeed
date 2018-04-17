@@ -16,12 +16,11 @@ function get_users() {
 function get_user_by_username($username){
     print_r($username);
     print_r("\n");    
-    print_r(count($users_array['0']));
-    print_r("\n");    
-    foreach ($users_array as $user){
-	    print_r($user);
-        if(strcasecmp($user['username'],$username) == 0){
-            return $user;
+    print_r(count($users_array));
+    print_r("\n"); 
+    foreach ($users_array as $key => $value){
+        if(strcasecmp($users_array[$key]['username'],$username) == 0){
+            return $users_array[$key];
         }
     }
     return null;
