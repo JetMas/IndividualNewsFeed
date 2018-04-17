@@ -13,9 +13,7 @@ function get_users() {
 }
 
 function get_user_by_username($username){   
-    print_r($GLOBALS['users_array']);
-    print_r("\n");
-    foreach ($users_array as $user){
+    foreach ($GLOBALS['users_array'] as $user){
         print_r($user);
         if(strcasecmp($user['username'],$username) == 0){
             return $user;
