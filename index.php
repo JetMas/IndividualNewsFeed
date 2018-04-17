@@ -71,7 +71,7 @@ session_start();
         </form>
       </div>
       <div class="modal-footer">
-        <button id="login" type="button" class="btn btn-primary" data-dismiss="modal">Login</button>
+        <button id="login" type="button" class="btn btn-primary submit" data-dismiss="modal">Login</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>

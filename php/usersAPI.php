@@ -14,7 +14,6 @@ function get_users() {
 
 function get_user_by_username($username){   
     foreach ($GLOBALS['users_array'] as $user){
-        print_r($user);
         if(strcasecmp($user['username'],$username) == 0){
             return $user;
         }
@@ -33,16 +32,20 @@ function new_user($username, $password){
 
 function user_login($username, $password){
     $user = get_user_by_username($username);
+    print_r($user);
     if(strcmp($user["password"],$password) == 0){
-        $_SESSION['user'] = $username;
+        $_SESSION['user'] = $user['username'];
         return true;
     }
     else{
         return false;
     }
 }
+function user_logout(){
+    $_SESSION['user'] = '';
+}
 
-$accepted_URL = array("get_users", "get_user_by_username", "new_user", "login");
+$accepted_URL = array("get_users", "get_user_by_username", "new_user", "login", "logout");
 $value = "An error has occured";
 
 if(isset($_GET["action"]) && in_array($_GET["action"], $accepted_URL)){
@@ -81,17 +84,11 @@ if(isset($_POST["action"]) && in_array($_POST["action"], $accepted_URL)){
             break;
         case "login":
             if(isset($_POST["username"]) && isset($_POST["password"])){
-                if(get_user_by_username($_POST["username"])!==null){
-                    if(user_login($_POST["username"], $_POST["password"])){
+                if(get_user_by_username($_POST["username"])!==null && user_login($_POST["username"], $_POST["password"])){
                         $value = "Login successful.";
-                    }
-                    else {
-                        $value = "Wrong username or password.";                        
-                    }
                 }
-		else{
-		            //$value = "Here";
-                    $value = "User does not exist.";
+		        else{
+                    $value = "Wrong username or password.";                        
                 }
             }
             else {
@@ -100,6 +97,9 @@ if(isset($_POST["action"]) && in_array($_POST["action"], $accepted_URL)){
             break;
         default:
             $value = "Unkown action.";
+        case "logout":
+            user_logout();
+            break;
     }
 }
 

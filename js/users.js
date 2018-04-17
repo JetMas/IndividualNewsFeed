@@ -12,6 +12,17 @@ function login(username, password) {
   });
 }
 
+function logout() {
+  var data = `action=logout`;
+  $.ajax({
+    type:'POST',
+    data: data,    
+    url: 'php/usersAPI.php',
+    success: function(response){
+      console.log(response);
+    }
+  });
+}
 
 $(document).ready(function () {
   $('#login').click(function () {
@@ -21,5 +32,9 @@ $(document).ready(function () {
     console.log(username);
     console.log(password);
     login(username, password);
+  });
+  $('#logout').click(function () {
+    //console.log('click1');
+    logout();
   });
 });
