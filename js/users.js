@@ -8,6 +8,7 @@ function login(username, password) {
     url: 'php/usersAPI.php',
     success: function(response){
       console.log(response);
+      window.location.reload();      
     }
   });
 }
@@ -20,6 +21,7 @@ function logout() {
     url: 'php/usersAPI.php',
     success: function(response){
       console.log(response);
+      window.location.reload();      
     }
   });
 }
