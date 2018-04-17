@@ -13,6 +13,7 @@ function get_users() {
 
 function get_user_by_username($username){
     foreach($users as $user){
+        echo $user;
         if(strcasecmp($user->username,$username) == 0){
             return $user;
         }
