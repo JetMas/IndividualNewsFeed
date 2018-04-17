@@ -3,7 +3,7 @@
 //Description: Provides Api for accessing the users json file.
 session_start();
 
-$users_file_path = "users.json";
+$users_file_path = "http://www.se.rit.edu/~jrm3929/IndividualNewsFeed/php/users.json";
 $users_str = file_get_contents($user_file_path);
 $users = json_decode($users_str, true);
 
