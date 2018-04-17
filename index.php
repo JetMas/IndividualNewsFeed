@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,7 +38,15 @@
       <input type='radio' name='newsOptions' value='Sports'/>Sports
     </label>
   </div>
-  <button class="btn btn-outline-info" data-toggle="modal" data-target="#loginModal">Login</button>
+  <?php 
+    if($_SESSION['user'] != ''){
+      echo'<label>'+$_SESSION['user']+'</label>';
+      echo '<button class="btn btn-outline-success" id="logout">Logout</button>';
+    }
+    else {
+      echo '<button class="btn btn-outline-success" data-toggle="modal" data-target="#loginModal">Login</button>';      
+    }
+  ?>
 </nav>
 
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">

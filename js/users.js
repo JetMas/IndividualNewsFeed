@@ -1,9 +1,5 @@
 const userFile = 'json/users.json';
 
-function setUserCookie(username){
-  document.cookie = `user=${username}; path=/`;
-}
-
 function login(username, password) {
   var data = `action=login&usernam=${username}&password=${password}`;
   console.log("login")
@@ -12,7 +8,7 @@ function login(username, password) {
     data: data,
     url: 'php/usersAPI.php',
     success: function(response){
-      console.log("success");
+      console.log(response);
     }
   });
 }
