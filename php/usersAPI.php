@@ -86,7 +86,7 @@ if(isset($_POST["action"]) && in_array($_POST["action"], $accepted_URL)){
                     }
                 }
                 else{
-                    $value =  $_POST["username"] + "User does not exist.";
+                    $value =  $_POST["username"];
                 }
             }
             else {
