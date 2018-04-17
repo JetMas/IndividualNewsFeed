@@ -6,15 +6,15 @@ session_start();
 $users_file_path = "users.json";
 $users_str = file_get_contents($users_file_path);
 $users_array = json_decode($users_str, true);
-print_r($users_array);
+print_r($users_array . "\n");
 
 function get_users() {
     return $users;
 }
 
 function get_user_by_username($username){
-    print_r($username);
-    print_r(count($users_array));
+    print_r($username . "\n");
+    print_r(count($users_array) . "\n");
     foreach ($users_array as $user){
 	    print_r($user);
         if(strcasecmp($user['username'],$username) == 0){
