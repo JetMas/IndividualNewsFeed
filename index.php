@@ -40,7 +40,7 @@ session_start();
   </div>
   <?php 
     if($_SESSION['user'] != ''){
-      echo'<label class="text-white">'+$_SESSION['user']+'</label>';
+      echo('<label class="text-white">'+$_SESSION['user']+'</label>');
       echo '<button class="btn btn-outline-success" id="logout">Logout</button>';
     }
     else {
