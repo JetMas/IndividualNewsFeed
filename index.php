@@ -45,7 +45,7 @@ session_start();
         if($_SESSION['user'] != ''){
       ?>
         <label class="btn btn-outline-light" name='favoritesButton'>
-          <input type='radio' name='favorites'/>Favorites
+          <input type='radio' name='favorites'/>Favs
         </label>
       <?php 
         }
@@ -143,7 +143,7 @@ session_start();
               <span id="pubDate" class="mb-1 text-muted">
                 Published Date
               </span>
-              <button id="favoriteButton" type="button" class="favoriteButton btn btn-default btn-circle" onclick="favorite(this)">
+              <button id="favoriteButton" type="button" class="favoriteButton btn btn-default btn-circle" onclick="new_favorite(this)">
                 <i class="fa fa-heart"></i>
               </button>
             </div>

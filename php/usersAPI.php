@@ -9,7 +9,7 @@ $users_array = json_decode($users_str, true);
   
 
 function get_users() {
-    return $users;
+    return $users_array;
 }
 
 function get_user_by_username($username){   

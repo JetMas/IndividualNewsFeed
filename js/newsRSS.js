@@ -8,6 +8,9 @@ var handleData = function(data) {
     //Get node in html with the proper bootstrap classes
     const articleNode = document.getElementById('article').cloneNode(true);
 
+    //Clear the container
+    document.querySelector('content').innerHTML = '';
+    
     // make a node of the image
     const imageNode = articleNode.querySelector('img[id="image"]');
     //imageNode.className = 'img-thumbnail'
