@@ -129,7 +129,7 @@ session_start();
               <span id="pubDate" class="mb-1 text-muted">
                 Published Date
               </span>
-              <button id="favoriteButton" type="button" class="favoriteButton btn btn-default btn-circle" onclick="favorite()">
+              <button id="favoriteButton" type="button" class="favoriteButton btn btn-default btn-circle" onclick="favorite(this)">
                 <i class="fa fa-heart"></i>
               </button>
               
