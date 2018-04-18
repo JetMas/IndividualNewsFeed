@@ -129,9 +129,10 @@ session_start();
               <span id="pubDate" class="mb-1 text-muted">
                 Published Date
               </span>
-              <button id="favoriteButton" type="button" class="favoriteButton btn btn-default btn-circle">
+              <button id="favoriteButton" type="button" class="favoriteButton btn btn-default btn-circle" onclick="favorite()">
                 <i class="fa fa-heart"></i>
               </button>
+              
             </div>
             <p id="description" class="card-text mb-auto">Description</p>
             <a id="link" href="#">Continue reading</a>
