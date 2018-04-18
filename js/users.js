@@ -55,9 +55,7 @@ function createUser(username, password){
     data: data,    
     url: 'php/usersAPI.php',
     success: function(response){
-      console.log(response);
-      //appendLoginButton();                                            
-      window.location.reload();      
+      console.log(response);                                    
     }
   });  
 }

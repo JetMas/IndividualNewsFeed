@@ -29,8 +29,13 @@ function new_user($username, $password){
         'password' => $password
     );
     array_push($GLOBALS['users_array'], $new_user);
-    print_r($GLOBALS['users_array']);
-    file_put_contents($GLOBALS['users_file_path'], json_encode($GLOBALS['users_array']));
+    print_r(json_encode($GLOBALS['users_array']));
+    if(file_put_contents($GLOBALS['users_file_path'], json_encode($GLOBALS['users_array'])) === false){
+        return false;
+    }
+    else {
+        return true;
+    }
 }
 
 //Login user
