@@ -123,12 +123,14 @@ session_start();
         <div id="articleInfo" class="card-body d-flex flex-column align-items-start">
             <h4 class="mb-0">
               <a id="title" class="text-dark" href="#">Title</a>
-            </h4>            
-            <div id="pubDate" class="mb-1 text-muted">
-              Published Date
-              <button id="favoriteButton" type="button" class="btn btn-default btn-circle">
-                <i class="fa fa-heart"></i>
-              </button>
+            </h4>        
+            <div>    
+              <span id="pubDate" class="mb-1 text-muted">
+                Published Date
+              </span>
+                <button id="favoriteButton" type="button" class="btn btn-default btn-circle">
+                  <i class="fa fa-heart"></i>
+                </button>
             </div>
             <p id="description" class="card-text mb-auto">Description</p>
             <a id="link" href="#">Continue reading</a>
