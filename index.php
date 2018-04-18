@@ -124,8 +124,9 @@ session_start();
             <h4 class="mb-0">
               <a id="title" class="text-dark" href="#">Title</a>
             </h4>            
-            <div id="pubDate" class="mb-1 text-muted">Published Date
-              <button id="favoriteButton" type="button" class="btn btn-danger btn-circle">
+            <div id="pubDate" class="mb-1 text-muted">
+              Published Date
+              <button id="favoriteButton" type="button" class="btn btn-default btn-circle">
                 <i class="fa fa-heart"></i>
               </button>
             </div>
