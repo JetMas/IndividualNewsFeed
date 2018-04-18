@@ -1,10 +1,25 @@
 
 function handle_data(data){
-    var favJSON = JSON.parse(data);
-    const articleNode = document.getElementById('article').cloneNode(true);
-    const titleNode = articleNode.querySelector('a[id="title"]');
-    titleNode.href = item.querySelector('link').textContent;
-    titleNode.innerHTML = item.querySelector('title').textContent;    
+    let favJSON = JSON.parse(data);
+
+    let nodes = [];
+    //Create articles for favorites
+    for(var i = 0; i < favJSON.length; i++) {
+        let articleNode = document.getElementById('article').cloneNode(true);
+        let titleNode = articleNode.querySelector('a[id="title"]');
+        titleNode.innerHTML = favJSON[i].title;    
+        titleNode.href = favJSON[i].url;
+
+        nodes.push(articleNode);
+    }
+    // clear out the container
+    const container = document.getElementById('content');
+    container.innerHTML = '';
+
+    // append them all to the container
+    nodes.forEach(function(node) {
+        container.appendChild(node);
+    });   
 }
 
 function get_favorites(){
@@ -15,7 +30,8 @@ function get_favorites(){
         data: data,    
         url: 'php/favoritesAPI.php',
         success: function(response){
-            //console.log(response);                                                                                                              
+            //console.log(response);
+            handle_data(response);                                                                                                              
         }
     });
 }
