@@ -23,7 +23,7 @@ session_start();
 <body>
 
 <nav class="navbar navbar-expand-md bg-secondary fixed-top ">
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
     <div id="newsSelector" class="navbar-nav mr-auto btn-group-toggle" data-toggle="buttons">
       <label class="btn btn-outline-light active" name="newsButton">
         <input type="radio" name="newsOptions" value='US'/>US
@@ -61,8 +61,8 @@ session_start();
           echo '<button class="btn btn-outline-success" id="logout">Logout</button>';
         }
         else {
-          echo '<button class="btn btn-outline-success" data-toggle="modal" data-target="#loginModal">Login</button>';
-          echo '<button class="btn btn-outline-success" data-toggle="modal" data-target="#newUserModal">Sign Up</button>';                      
+          echo '<button id="loginModal" class="btn btn-outline-success" data-toggle="modal" data-target="#loginModal">Login</button>';
+          echo '<button id="newUserModal" class="btn btn-outline-success" data-toggle="modal" data-target="#newUserModal">Sign Up</button>';                      
         }
       ?>
     </div>

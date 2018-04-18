@@ -8,6 +8,10 @@ body {
 
 nav .btn {
   width: 75px;
+  margin-right: 10px;
+}
+#logout, #loginModal, #newUserModal {
+  margin-right: 10px;
 }
 
 #image {
