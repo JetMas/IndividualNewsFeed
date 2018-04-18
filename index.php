@@ -132,7 +132,6 @@ session_start();
               <button id="favoriteButton" type="button" class="favoriteButton btn btn-default btn-circle" onclick="favorite(this)">
                 <i class="fa fa-heart"></i>
               </button>
-              
             </div>
             <p id="description" class="card-text mb-auto">Description</p>
             <a id="link" href="#">Continue reading</a>
