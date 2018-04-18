@@ -29,7 +29,7 @@ function new_user($username, $password){
         'password' => $password
     );
     array_push($GLOBALS['users_array'], $new_user);
-    file_put_contents($GLOBALS['users_file_path'], json_encode($users));
+    file_put_contents($GLOBALS['users_file_path'], json_encode($GLOBALS['users_array']));
 }
 
 //Login user
