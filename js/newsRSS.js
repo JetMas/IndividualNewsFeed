@@ -13,7 +13,7 @@ var handleData = function(data) {
   const nodes = items.map(function(item) {
     
     //Get node in html with the proper bootstrap classes
-    const articleNode = $.extend( true, {}, baseNode);
+    const articleNode = baseNode;
 
     // make a node of the image
     const imageNode = articleNode.querySelector('img[id="image"]');
