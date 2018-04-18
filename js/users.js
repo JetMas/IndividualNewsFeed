@@ -12,7 +12,7 @@ function login(username, password) {
       logoutButton.innerHTML = "Logout";
       logoutButton.className = "btn btn-outline-success";
       logoutButton.setAttribute("id", "logout");
-      $('#login').innerHTML = logoutButton;      
+      $('#user_section').innerHTML = logoutButton;      
       //window.location.reload();      
     }
   });
@@ -31,7 +31,8 @@ function logout() {
       loginButton.className = "btn btn-outline-success";
       loginButton.setAttribute("id", "login");
       loginButton.setAttribute("data-toggle", "modal");
-      loginButton.setAttribute("data-target", "#loginModal");      
+      loginButton.setAttribute("data-target", "#loginModal");
+      $('#user_section').innerHTML = loginButton;                  
       //window.location.reload();      
     }
   });
