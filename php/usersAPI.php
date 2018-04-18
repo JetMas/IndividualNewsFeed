@@ -28,7 +28,7 @@ function new_user($username, $password){
         'username' => $username,
         'password' => $password
     );
-    array_push($users_array, $new_user);
+    array_push($GLOBALS['users_array'], $new_user);
     file_put_contents($GLOBALS['users_file_path'], json_encode($users));
 }
 
