@@ -40,6 +40,16 @@ session_start();
       <label class="btn btn-outline-light" name='newsButton'>
         <input type='radio' name='newsOptions' value='Sports'/>Sports
       </label>
+
+      <?php
+        if($_SESSION['user'] != ''){
+      ?>
+        <label class="btn btn-outline-light" name='favoritesButton'>
+          <input type='radio' name='favorites'/>Favorites
+        </label>
+      <?php 
+        }
+      ?>
     </div>
 
     <div class="inline my-2 my-lg-0" id="user_section">

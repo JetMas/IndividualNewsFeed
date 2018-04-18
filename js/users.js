@@ -55,7 +55,7 @@ function createUser(username, password){
     data: data,    
     url: 'php/usersAPI.php',
     success: function(response){
-      $("#notification").html(response);
+      alert(response);                  
       //console.log(response);                                    
     }
   });  
