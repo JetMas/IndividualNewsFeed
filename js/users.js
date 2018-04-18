@@ -27,7 +27,7 @@ function login(username, password) {
     data: data,
     url: 'php/usersAPI.php',
     success: function(response){
-      console.log(response);
+      //console.log(response);
       //appendLogoutButton();                              
       window.location.reload();      
     }
@@ -41,7 +41,7 @@ function logout() {
     data: data,    
     url: 'php/usersAPI.php',
     success: function(response){
-      console.log(response);
+      //console.log(response);
       //appendLoginButton();                                            
       window.location.reload();      
     }
@@ -55,7 +55,8 @@ function createUser(username, password){
     data: data,    
     url: 'php/usersAPI.php',
     success: function(response){
-      console.log(response);                                    
+      $("#notification").html(response);
+      //console.log(response);                                    
     }
   });  
 }

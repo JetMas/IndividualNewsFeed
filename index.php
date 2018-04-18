@@ -59,6 +59,8 @@ session_start();
   </div>
 </nav>
 
+
+
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -118,6 +120,8 @@ session_start();
 </div>
 
 <main class="container">
+  <div id="notification" class="justify-content-center fixed-top">
+  </div>
   <div id="content">
     <div id="article">
       <div class="card flex-md-row mb-4 box-shadow">

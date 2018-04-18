@@ -9,7 +9,8 @@ function favorite(element){
         data: data,    
         url: 'php/favoritesAPI.php',
         success: function(response){
-            console.log(response);
+            //console.log(response);
+            $("#notification").html(response);            
             $(element).removeClass('btn-default');
             $(element).addClass('btn-danger');                                                                                                              
         }
