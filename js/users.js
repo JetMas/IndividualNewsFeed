@@ -61,7 +61,6 @@ function createUser(username, password){
 }
 
 $(document).ready(function () {
-  console.log("Adding user onlcick");  
   $('#login').click(function () {
     //console.log('click1');
     var username = document.getElementById("username").value;
