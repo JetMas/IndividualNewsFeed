@@ -124,11 +124,12 @@ session_start();
             <h4 class="mb-0">
               <a id="title" class="text-dark" href="#">Title</a>
             </h4>            
-            <div id="pubDate" class="mb-1 text-muted">Published Date</div>
+            <div id="pubDate" class="mb-1 text-muted">Published Date
+              <button id="favoriteButton" type="button" class="btn btn-danger btn-circle">
+                <i class="fa fa-heart"></i>
+              </button>
+            </div>
             <p id="description" class="card-text mb-auto">Description</p>
-            <button id="favoriteButton" type="button" class="btn btn-danger btn-circle">
-              <i class="fa fa-heart"></i>
-            </button>
             <a id="link" href="#">Continue reading</a>
         </div>
         <div id="imageWrapper" class="mx-auto">
