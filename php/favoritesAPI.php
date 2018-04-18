@@ -3,7 +3,7 @@
 //Description: Provides Api for accessing the users json file.
 session_start();
 
-$favorites_file_path = "/favorites.json";
+$favorites_file_path = "favorites.json";
 $favorites_str = file_get_contents($favorites_file_path);
 $favorites_array = json_decode($favorites_str, true);
   

@@ -3,7 +3,7 @@
 //Description: Provides Api for accessing the users json file.
 session_start();
 
-$users_file_path = "/users.json";
+$users_file_path = "users.json";
 $users_str = file_get_contents($users_file_path);
 $users_array = json_decode($users_str, true);
   
