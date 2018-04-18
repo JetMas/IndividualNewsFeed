@@ -27,8 +27,7 @@ function new_favorite($username, $title, $url){
         'title' => $title,
         'url' => $url
     );
-    print_r($new_favorite);
-    array_push($GLOBALS['favorites_array'], $new_user);
+    array_push($GLOBALS['favorites_array'], $new_favorite);
     print_r(json_encode($GLOBALS['favorites_array']));
     file_put_contents($GLOBALS['favorites_file_path'], json_encode($GLOBALS['favorites_array']));
 }
