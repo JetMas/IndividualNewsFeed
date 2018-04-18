@@ -120,7 +120,7 @@ session_start();
 </div>
 
 <main class="container">
-  <div id="notification" class="justify-content-center fixed-top">
+  <div id="notification" class="justify-content-center position-static">
   </div>
   <div id="content">
     <div id="article">
