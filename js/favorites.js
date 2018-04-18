@@ -23,7 +23,6 @@ function handle_data(data){
 }
 
 function get_favorites(){
-
     var data = `action=get_favorites`;        
     $.ajax({
         type:'GET',

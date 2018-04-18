@@ -44,7 +44,7 @@ session_start();
       <?php
         if($_SESSION['user'] != ''){
       ?>
-        <label class="btn btn-outline-light" name='favoritesButton'>
+        <label class="btn btn-outline-light" name='favoritesButton' onclick="get_favorites()">
           <input type='radio' name='favorites'/>Favs
         </label>
       <?php 
