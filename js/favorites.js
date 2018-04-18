@@ -6,14 +6,14 @@ function handle_data(data){
     //Create articles for favorites
     for(var i = 0; i < favJSON.length; i++) {
         let articleNode = document.getElementById('article').cloneNode(true);
-        
+
         let titleNode = articleNode.querySelector('a[id="title"]');
         titleNode.innerHTML = favJSON[i].title;    
         titleNode.href = favJSON[i].url;
 
 
         const imageNode = articleNode.querySelector('img[id="image"]');
-        imageNode.src = "";
+        imageNode.src = "images/placeHolder.jpg";
 
 
         const dateNode = articleNode.querySelector('span[id="pubDate"]');
