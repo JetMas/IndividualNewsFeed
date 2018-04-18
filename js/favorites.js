@@ -1,6 +1,6 @@
 
-function favorite(btn){
-    console.log('click1');   
-    console.log($(btn).closest("#title").innerHTML);
-    console.log($(btn).closest("#link").href);
+function favorite(element){
+    console.log(element);   
+    console.log($(element).closest("#title"));
+    console.log($(element).closest("#link"));
 }
