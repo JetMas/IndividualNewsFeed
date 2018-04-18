@@ -3,8 +3,8 @@ var handleData = function(data) {
   // data is a DOM-like object, so `querySelectorAll` works
   const items = Array.from(data.querySelectorAll('item'));
 
-  //Get node in html with the proper bootstrap classes
-  const articleNode = document.getElementById('article').cloneNode(true);
+  //Get node in html with the proper bootstrap classes  
+  const baseNode = document.getElementById('article').cloneNode(true);
 
   //Clear the container
   document.querySelector('content').innerHTML = '';
@@ -12,6 +12,9 @@ var handleData = function(data) {
   // map the list of items into nodes for html
   const nodes = items.map(function(item) {
     
+    //Get node in html with the proper bootstrap classes
+    const articleNode = $.extend( true, {}, baseNode);
+
     // make a node of the image
     const imageNode = articleNode.querySelector('img[id="image"]');
     //imageNode.className = 'img-thumbnail'
