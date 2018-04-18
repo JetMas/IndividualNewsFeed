@@ -8,7 +8,12 @@ function login(username, password) {
     url: 'php/usersAPI.php',
     success: function(response){
       console.log(response);
-      window.location.reload();      
+      const logoutButton = document.createElement("BUTTON");
+      logoutButton.innerHTML = "Logout";
+      logoutButton.className = "btn btn-outline-success";
+      logoutButton.setAttribute("id", "logout");
+      $('#login').innerHTML = logoutButton;      
+      //window.location.reload();      
     }
   });
 }
@@ -21,7 +26,13 @@ function logout() {
     url: 'php/usersAPI.php',
     success: function(response){
       console.log(response);
-      window.location.reload();      
+      const loginButton = document.createElement("BUTTON");
+      loginButton.innerHTML = "login";
+      loginButton.className = "btn btn-outline-success";
+      loginButton.setAttribute("id", "login");
+      loginButton.setAttribute("data-toggle", "modal");
+      loginButton.setAttribute("data-target", "#loginModal");      
+      //window.location.reload();      
     }
   });
 }
