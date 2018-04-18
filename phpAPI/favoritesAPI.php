@@ -22,7 +22,14 @@ function get_favorites($username) {
 //Creates a new user
 //endcodes the user info and adds it to users.json.
 function new_favorite($username, $title, $url){
-
+    $new_favorite = array(
+        'username' => $username,
+        'title' => $title,
+        'url' => $url
+    );
+    array_push($GLOBALS['favorites_array'], $new_user);
+    print_r(json_encode($GLOBALS['favorites_array']));
+    file_put_contents($GLOBALS['favorites_file_path'], json_encode($GLOBALS['favorites_array']));
 }
 
 $accepted_URL = array("get_favorites", "new_favorite");
