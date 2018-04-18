@@ -1,5 +1,25 @@
 const userFile = 'json/users.json';
 
+function appendLoginButton(){
+  const loginButton = document.createElement("BUTTON");
+  loginButton.innerHTML = "login";
+  loginButton.className = "btn btn-outline-success";
+  loginButton.setAttribute("id", "login");
+  loginButton.setAttribute("data-toggle", "modal");
+  loginButton.setAttribute("data-target", "#loginModal");
+  document.getElementById('user_section').innerHTML = "";
+  document.getElementById('user_section').appendChild(loginButton);
+}
+
+function appendLogoutButton(){
+  const logoutButton = document.createElement("BUTTON");
+  logoutButton.innerHTML = "Logout";
+  logoutButton.className = "btn btn-outline-success";
+  logoutButton.setAttribute("id", "logout");
+  document.getElementById('user_section').innerHTML = "";
+  document.getElementById('user_section').appendChild(logoutButton);
+}
+
 function login(username, password) {
   var data = `action=login&username=${username}&password=${password}`;
   $.ajax({
@@ -8,13 +28,8 @@ function login(username, password) {
     url: 'php/usersAPI.php',
     success: function(response){
       console.log(response);
-      const logoutButton = document.createElement("BUTTON");
-      logoutButton.innerHTML = "Logout";
-      logoutButton.className = "btn btn-outline-success";
-      logoutButton.setAttribute("id", "logout");
-      console.log("login");
-      document.getElementById('user_section').innerHTML = logoutButton;                        
-      //window.location.reload();      
+      //appendLogoutButton();                              
+      window.location.reload();      
     }
   });
 }
@@ -27,15 +42,8 @@ function logout() {
     url: 'php/usersAPI.php',
     success: function(response){
       console.log(response);
-      const loginButton = document.createElement("BUTTON");
-      loginButton.innerHTML = "login";
-      loginButton.className = "btn btn-outline-success";
-      loginButton.setAttribute("id", "login");
-      loginButton.setAttribute("data-toggle", "modal");
-      loginButton.setAttribute("data-target", "#loginModal");
-      console.log("logout");      
-      document.getElementById('user_section').innerHTML = loginButton;            
-      //window.location.reload();      
+      //appendLoginButton();                                            
+      window.location.reload();      
     }
   });
 }
@@ -45,8 +53,6 @@ $(document).ready(function () {
     //console.log('click1');
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
-    console.log(username);
-    console.log(password);
     login(username, password);
   });
   $('#logout').click(function () {

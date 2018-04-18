@@ -43,7 +43,6 @@ session_start();
     <div class="inline my-2 my-lg-0" id="user_section">
       <button class="btn btn-outline-success" data-toggle="modal" data-target="#loginModal">Login</button>
       <?php 
-        /*
         if($_SESSION['user'] != ''){
           echo '<label class="text-white" id="username">';
           echo $_SESSION["user"];
@@ -52,7 +51,7 @@ session_start();
         }
         else {
           echo '<button class="btn btn-outline-success" data-toggle="modal" data-target="#loginModal">Login</button>';      
-        }*/
+        }
       ?>
     </div>
   </div>
