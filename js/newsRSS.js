@@ -31,7 +31,7 @@ var handleData = function(data) {
     //articleNode.querySelector('div[id="title"]').appendChild(titleNode);
 
     // make a node for the date
-    const dateNode = articleNode.querySelector('div[id="pubDate"]');
+    const dateNode = articleNode.querySelector('span[id="pubDate"]');
     dateNode.innerHTML = item.querySelector('pubDate').textContent;
     //articleNode.querySelector('div[id="pubDate"]').innerHTML = item.querySelector('pubDate').textContent;
     //articleNode.querySelector('div[id="pubDate"]').appendChild(dateNode);
