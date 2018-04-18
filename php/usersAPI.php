@@ -21,15 +21,19 @@ function get_user_by_username($username){
     return null;
 }
 
+//Creates a new user
+//endcodes the user info and adds it to users.json.
 function new_user($username, $password){
     $new_user = array(
         'username' => $username,
         'password' => $password
     );
     array_push($users_array, $new_user);
-    file_put_contents($users_file, json_encode($users));
+    file_put_contents($GLOBALS['users_file_path'], json_encode($users));
 }
 
+//Login user
+//Checks if the recorded user password is equal to the provided password.
 function user_login($username, $password){
     $user = get_user_by_username($username);
     if(strcmp($user["password"],$password) == 0){
@@ -40,6 +44,9 @@ function user_login($username, $password){
         return false;
     }
 }
+
+//Logout user
+//Sets the session variable for 'session' to an empty string.
 function user_logout(){
     $_SESSION['user'] = '';
 }

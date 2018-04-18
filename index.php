@@ -49,7 +49,8 @@ session_start();
           echo '<button class="btn btn-outline-success" id="logout">Logout</button>';
         }
         else {
-          echo '<button class="btn btn-outline-success" data-toggle="modal" data-target="#loginModal">Login</button>';      
+          echo '<button class="btn btn-outline-success" data-toggle="modal" data-target="#loginModal">Login</button>';
+          echo '<button class="btn btn-outline-success" data-toggle="modal" data-target="#newUserModal">Sign Up</button>';                      
         }
       ?>
     </div>
@@ -79,6 +80,35 @@ session_start();
       </div>
       <div class="modal-footer">
         <button id="login" type="button" class="submit btn btn-primary" data-dismiss="modal">Login</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="newUserModal" tabindex="-1" role="dialog" aria-labelledby="newUserModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newUserModalLabel">Create a new user.</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="username">Enter Username</label>
+            <input type="text" class="form-control" id="username" placeholder="Username">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Password">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button id="createUser" type="button" class="submit btn btn-primary" data-dismiss="modal">Sign Up</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>

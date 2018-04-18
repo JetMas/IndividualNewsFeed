@@ -48,6 +48,20 @@ function logout() {
   });
 }
 
+function createUser(username, password){
+  var data = `action=new_user&username=${username}&password=${password}`;
+  $.ajax({
+    type:'POST',
+    data: data,    
+    url: 'php/usersAPI.php',
+    success: function(response){
+      console.log(response);
+      //appendLoginButton();                                            
+      window.location.reload();      
+    }
+  });  
+}
+
 $(document).ready(function () {
   $('#login').click(function () {
     //console.log('click1');
