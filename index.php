@@ -8,6 +8,7 @@ session_start();
   <meta charset="utf-8"/>
   <title>News Feed</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">  
   <link rel="stylesheet" href="css/style.css">
 
   <!-- Load in the RSS reader -->
@@ -122,8 +123,10 @@ session_start();
         <div id="articleInfo" class="card-body d-flex flex-column align-items-start">
             <h4 class="mb-0">
               <a id="title" class="text-dark" href="#">Title</a>
-              <button id="favoriteButton" type="button" class="btn btn-danger btn-circle"><i class="fa fa-heart"></i></button>
             </h4>
+            <button id="favoriteButton" type="button" class="btn btn-danger btn-circle">
+              <ion-icon name="heart"></ion-icon>
+            </button>            
             <div id="pubDate" class="mb-1 text-muted">Published Date</div>
             <p id="description" class="card-text mb-auto">Description</p>
             <a id="link" href="#">Continue reading</a>
