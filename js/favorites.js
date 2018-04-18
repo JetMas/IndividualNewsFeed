@@ -1,8 +1,18 @@
 
 function favorite(element){
-    console.log(element);
-    console.log($(element).closest("#articleInfo").find("#title"));
-    console.log($(element).closest("#articleInfo").find("#link"));
-    console.log($(element).closest("#articleInfo").find("#title").text());
-    console.log($(element).closest("#articleInfo").find("#link").attr('href'));
+    var title = $(element).closest("#articleInfo").find("#title").text();
+    var url = $(element).closest("#articleInfo").find("#link").attr('href');
+
+  var data = `action=new_favorite&title=${title}&url=${url}`;    
+    $.ajax({
+        type:'POST',
+        data: data,    
+        url: 'php/favoritesAPI.php',
+        success: function(response){
+            console.log(response);
+            //appendLoginButton();
+            $(element).removeClass('btn-default');
+            $(element).addClass('btn-danger');                                                                                                              
+        }
+    });
 }
