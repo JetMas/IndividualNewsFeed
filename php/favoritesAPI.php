@@ -28,7 +28,7 @@ function new_favorite($username, $title, $url){
         'url' => $url
     );
     array_push($GLOBALS['favorites_array'], $new_favorite);
-    print_r(json_encode(json_encode($GLOBALS['favorites_array'])));
+    print_r(json_encode($GLOBALS['favorites_array']));
     file_put_contents($GLOBALS['favorites_file_path'], json_encode($GLOBALS['favorites_array']));
 }
 
@@ -54,7 +54,8 @@ if(isset($_POST["action"]) && in_array($_POST["action"], $accepted_URL)){
         case "new_favorite":
             if(isset($_POST["title"]) && isset($_POST["url"])){
                 if($_SESSION['user'] != ''){
-                    $value = new_favorite($_SESSION['user'], $_POST["title"], $_POST["url"]);
+                    new_favorite($_SESSION['user'], $_POST["title"], $_POST["url"]);
+                    $value = "Article saved.";                    
                 }
                 else {
                     $value = "Must be logged in to create new favorite.";
