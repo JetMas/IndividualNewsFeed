@@ -99,11 +99,11 @@ session_start();
         <form>
           <div class="form-group">
             <label for="username">Enter Username</label>
-            <input type="text" class="form-control" id="username" placeholder="Username">
+            <input type="text" class="form-control" id="newUsername" placeholder="Username">
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Password">
+            <input type="password" class="form-control" id="newPassword" placeholder="Password">
           </div>
         </form>
       </div>

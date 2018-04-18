@@ -73,4 +73,10 @@ $(document).ready(function () {
     //console.log('click1');
     logout();
   });
+  $('#createUser').click(function () {
+    //console.log('click1');
+    var username = document.getElementById("newUsername").value;
+    var password = document.getElementById("newPassword").value;
+    createUser(username, password)
+  });
 });
