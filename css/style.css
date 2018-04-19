@@ -1,6 +1,7 @@
 body {
   padding-top: 3.5rem;
-  background-color: #F5F5F5;
+  background-color: #D3D3D3;
+  
 }
 
 .container {
@@ -9,7 +10,6 @@ body {
 
 #navbarSupportedContent{
   padding: 0px 50px 0px 50px;
-  background-color: #D3D3D3;
 }
 
 nav .btn {
