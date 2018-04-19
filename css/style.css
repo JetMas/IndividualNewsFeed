@@ -6,12 +6,23 @@ body {
   padding-top: 20px;
 }
 
+#navbarSupportedContent{
+  padding: 0px 50px 0px 50px;
+}
+
 nav .btn {
   width: 75px;
   margin-right: 10px;
 }
+
 #logout, #loginModal, #newUserModal {
   margin-right: 10px;
+}
+
+#username{
+  margin-right: 10px;
+  font-size: 1.3rem;
+  font-weight: bold;  
 }
 
 #image {
