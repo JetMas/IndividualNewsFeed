@@ -61,8 +61,8 @@ session_start();
           echo '<button class="btn btn-outline-success" id="logout">Logout</button>';
         }
         else {
-          echo '<button id="loginModal" class="btn btn-outline-success" data-toggle="modal" data-target="#loginModal">Login</button>';
-          echo '<button id="newUserModal" class="btn btn-outline-success" data-toggle="modal" data-target="#newUserModal">Sign Up</button>';                      
+          echo '<button class="btn btn-outline-success" data-toggle="modal" data-target="#loginModal">Login</button>';
+          echo '<button class="btn btn-outline-success" data-toggle="modal" data-target="#newUserModal">Sign Up</button>';                      
         }
       ?>
     </div>
