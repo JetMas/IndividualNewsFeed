@@ -55,7 +55,7 @@ session_start();
     <div class="inline my-2 my-lg-0" id="user_section">
       <?php 
         if($_SESSION['user'] != ''){
-          echo '<label class="text-white" id="name">';
+          echo '<label class="text-black" id="name">';
           echo $_SESSION["user"];
           echo '</label>';
           echo '<button class="btn btn-outline-success" id="logout">Logout</button>';
