@@ -22,8 +22,8 @@ session_start();
 
 <body>
 
-<nav class="navbar navbar-expand-md bg-light fixed-top ">
-  <div class="navbar nav" id="navbarSupportedContent">
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top ">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <div id="newsSelector" class="navbar-nav mr-auto btn-group-toggle" data-toggle="buttons">
       <label class="btn btn-outline-primary active" name="newsButton">
         <input type="radio" name="newsOptions" value='US'/>US
