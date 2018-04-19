@@ -22,7 +22,7 @@ session_start();
 
 <body>
 
-<nav class="navbar navbar-expand-md bg-secondary fixed-top ">
+<nav class="navbar navbar-expand-md bg-primary fixed-top ">
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <div id="newsSelector" class="navbar-nav mr-auto btn-group-toggle" data-toggle="buttons">
       <label class="btn btn-outline-light active" name="newsButton">
