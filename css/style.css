@@ -1,6 +1,6 @@
 body {
   padding-top: 3.5rem;
-  background-color: #cccccc;
+  background-color: #F5F5F5;
 }
 
 .container {
@@ -12,7 +12,7 @@ body {
 }
 
 nav .btn {
-  width: 80px;
+  width: 75px;
   margin-right: 10px;
 }
 
