@@ -22,29 +22,29 @@ session_start();
 
 <body>
 
-<nav class="navbar navbar-expand-md bg-primary fixed-top ">
+<nav class="navbar navbar-expand-md bg-light fixed-top ">
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <div id="newsSelector" class="navbar-nav mr-auto btn-group-toggle" data-toggle="buttons">
       <label class="btn btn-outline-light active" name="newsButton">
         <input type="radio" name="newsOptions" value='US'/>US
       </label>
 
-      <label class="btn btn-outline-light" name='newsButton'>
+      <label class="btn btn-outline-primary" name='newsButton'>
         <input type='radio' name='newsOptions' value='World'/>World
       </label>
 
-      <label class="btn btn-outline-light" name='newsButton'>
+      <label class="btn btn-outline-primary" name='newsButton'>
         <input type='radio' name='newsOptions' value='Technology'/>Tech
       </label>
 
-      <label class="btn btn-outline-light" name='newsButton'>
+      <label class="btn btn-outline-primary" name='newsButton'>
         <input type='radio' name='newsOptions' value='Sports'/>Sports
       </label>
 
       <?php
         if($_SESSION['user'] != ''){
       ?>
-        <label class="btn btn-outline-light" name='favoritesButton' onclick="get_favorites()">
+        <label class="btn btn-outline-primary" name='favoritesButton' onclick="get_favorites()">
           <input type='radio' name='favorites'/>Favs
         </label>
       <?php 
