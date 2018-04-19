@@ -9,6 +9,7 @@ body {
 
 #navbarSupportedContent{
   padding: 0px 50px 0px 50px;
+  background-color: #D3D3D3;
 }
 
 nav .btn {
@@ -23,7 +24,8 @@ nav .btn {
 #name{
   margin-right: 10px;
   font-size: 1.3rem;
-  font-weight: bold;  
+  font-weight: bold; 
+  color: black; 
 }
 
 #image {
